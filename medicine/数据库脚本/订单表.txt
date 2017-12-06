@@ -1,0 +1,23 @@
+
+
+drop table if exists m_order;
+
+/*==============================================================*/
+/* Table: m_order                                               */
+/*==============================================================*/
+create table m_order
+(
+   order_id             int not null auto_increment,
+   user_id              varchar(16),
+   order_sn             varchar(16),
+   order_user_name      varchar(16),
+   order_user_address   varchar(64),
+   order_user_phone     varchar(16),
+   order_price          int,
+   order_time           varchar(50),
+   order_state          int,
+   primary key (order_id)
+);
+
+alter table m_order add constraint FK_Reference_2 foreign key (user_id)
+      references m_user (user_id) on delete restrict on update restrict;

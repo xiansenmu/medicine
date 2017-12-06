@@ -1,0 +1,16 @@
+drop table if exists m_goods;
+
+/*==============================================================*/
+/* Table: m_goods                                               */
+/*==============================================================*/
+create table m_goods
+(
+   goods_id             int not null auto_increment,
+   goods_name           varchar(64),
+   goods_type           varchar(64),
+   goods_mdl            varchar(16),
+   goods_price          int,
+   goods_number         int,
+   goods_pic            varchar(32),
+   primary key (goods_id)
+);

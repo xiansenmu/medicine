@@ -1,0 +1,13 @@
+drop table if exists m_user;
+
+/*==============================================================*/
+/* Table: m_user                                                */
+/*==============================================================*/
+create table m_user
+(
+   user_id              varchar(16) not null,
+   user_name            varchar(16),
+   user_pass            varchar(32),
+   user_state           int comment '1是管理员，2是普通用户',
+   primary key (user_id)
+);

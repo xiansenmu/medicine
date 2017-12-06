@@ -1,0 +1,21 @@
+
+
+drop table if exists order_goods;
+
+/*==============================================================*/
+/* Table: order_goods                                           */
+/*==============================================================*/
+create table order_goods
+(
+   og_id                int not null auto_increment,
+   order_sn             int,
+   goods_name           varchar(32),
+   goods_type           varchar(16),
+   goods_number         int,
+   buy_number           int,
+   goods_price          int,
+   primary key (og_id)
+);
+
+alter table order_goods add constraint FK_Reference_3 foreign key (order_sn)
+      references m_order (order_id) on delete restrict on update restrict;
